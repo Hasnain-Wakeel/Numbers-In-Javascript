@@ -94,3 +94,10 @@
 // console.log(number)
 
 
+// ------------------ Generating Integers From 1 To 6 :-------------------------
+
+// let number = Math.floor(Math.random() * 6) + 1 
+// console.log(number)
+
+// This generates random integers from 1 to 6 ....
+
