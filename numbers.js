@@ -35,10 +35,26 @@
 // let randomNumber = Math.round(-12.61)            // -12.61 ~ -13
 // console.log(randomNumber)
 
-// --------------- Using "Ceil" Instead of "Round" : ----------------
+// -------------------------- Using "toFixed()" Method : -----------------------
+
+// This method also controls rounding a number , if the number after decimal is greater than or equals to 5 , 
+// it rounds that number to the nearest greater integer :
+// But remember you should leave the Parenthesis of this Method , Empty!
+// If the number after decimal is less than 5 , it rounds that number to the nearest smaller integer :
+// if you want to show a number with no decimal then use ".toFixed()"
+
+// let floatNumber = 1.5;
+// let floatNumber = 1.555;
+// let floatNumber = 1.5678;
+// let floatNumber = 1.34567;
+
+// let fixedNumber = floatNumber.toFixed();
+// console.log(fixedNumber);
+
+
+// --------------- Using ".ceil()" Instead of "Round" : ----------------
 
 // ---------- " Ceil Function rounds the number to the nearest larger integer : " -----------
-
 // ---------- " Ceil ka method number ko qareebi baray number/integer tak lay jaata hai" ---------
 
 // let number = Math.ceil(0.1)                   // 1
@@ -52,10 +68,9 @@
 // let number = Math.ceil(1.00001);              // 2
 // console.log(number);
 
-// --------------------- Using "Floor" Instead of Round : -----------------
+// --------------- Using ".floor()" Instead of "Round" : -----------------
 
-// ---------------- " Floor Function rounds the number to the nearest larger integer : " -----------
-
+// ---------------- " Floor Function rounds the number to the nearest smaller integer : " -----------
 // ----------- Floor ka method number ko qareebi chotay number ki taraf lay jaata hai : ------------
 
 // let number = Math.floor(1.999)                    // 1.999 ~ 1
@@ -72,12 +87,12 @@
 
 // --------------------------------------------------------------------------------------------------------
 
-// ------------------ Generating Random Numbers From 1 To 6 : --------------------
+// ------------------ Generating Random Numbers From 1 To 6 (Using "Ceil"): --------------------
 
 // let number = Math.ceil(Math.random() * 6)
 // console.log(number)
 
-// ------------------ Generating Random Numbers From 0 to 6 : --------------------
+// ------------------ Generating Random Numbers From 0 to 6 (Using "Floor" and "Round"): --------------------
 
 // let number = Math.round(Math.random() * 6)
 // console.log(number)
@@ -175,7 +190,76 @@
 // let floatFixToTwoDecimalPlaces = parseFloat(stringToNumber.toFixed(2));         // fix to 2 decimals
 // console.log(floatFixToTwoDecimalPlaces);
 
-// ---------------------------------------------
+// ----------------------------------------------------------------
+
+// ----------------------- Using "toFixed()" Method : --------------------------
+
+// let number = Math.random() * 10
+
+// let fixingNumber = Math.round(number)
+// // If number after decimal >= 5] , it incremented it by the nearest greater integer :
+// // (i.e : if number is "2.7" it will become "3")
+// console.log(fixingNumber)
+
+// Now! , if we want to fix a Float Number by a specific Decimal place , then we have to use "toFixed()" method of Javascript :
+
+// let floatNumber = 1.23456;
+// let fixedNumber = floatNumber.toFixed(2);          // I fixed the Float Number by 2 Decimal places ....
+// console.log(fixedNumber)
+
+// But some times, this method is not working well :
+
+// Example :
+
+// let floatNumber = 1.555;
+// let fixedNumber = floatNumber.toFixed(2);
+// console.log(fixedNumber); // 1.55
+
+// Since, there is a number "5" at the last but it is not incrementing in the 2nd last "5" (not making the result 1.56)
+
+// ------- We have to fix this issue by writing a code in which we implement that if the last number is equals to 5, make it 6 : --------
+
+
+// let num = 1.5555
+// let string = num.toFixed(1);            // 1.6
+// console.log(string);
+
+// let num = prompt("Enter a number : ");
+// // let string = num.toFixed(2)
+// let string = num.toString();
+// if (string.charAt(string.length-1) === "5"){            // Writing "5" in double quotes bcz we converted "num" to String :
+//     string = string.slice(0,string.length - 1) + "6"
+// }
+// num = Number(string)
+// prettyNum = num.toFixed(2)
+// console.log(prettyNum)
+// // console.log(string)
+
+// --------------
+
+// let input = prompt("Enter a number : ");
+
+// if (input === null || input.trim() === "" || isNaN(Number(input))) {
+//   console.log("Invalid input!");
+// } else {
+//   let num = Number(input);
+//   let string = num.toString();
+
+//   // Fix: only run if there's a decimal AND last char is '5'
+//   if (string.includes(".") && string.charAt(string.length - 1) === "5") {
+//     console.log("Last character is '5' after decimal ");
+//     let beforeSlice = string.slice(0, string.length - 1);
+//     string = beforeSlice + "6";
+//   } else {
+//     console.log("No decimal point found! ");
+//   }
+
+//   num = Number(string);
+//   let prettyNum = num.toFixed(2);
+//   console.log("Final result =", prettyNum);
+}
+
+
 
 // ---------------------- Converting "Number" to "String" : --------------------------
 
@@ -184,10 +268,9 @@
 
 // 1. Using "toString()" Method :
 
-// let number2 = 50 
+// let number2 = 50
 // let string1 = number2.toString();
 // console.log(string1 + " is a " + typeof string1 + ".");
-
 
 // 2. Using "String()" Keyword :
 
@@ -199,43 +282,42 @@
 
 // Difference Between Methods(Functions) and Properties :
 
-// The fundamental difference between a method and a property is that : A method do some work or task on that place 
-// where that method was used but A Property did not perform any type of task on that place where it was used or 
+// The fundamental difference between a method and a property is that : A method do some work or task on that place
+// where that method was used but A Property did not perform any type of task on that place where it was used or
 // called but it gives some type of result / answer from the place where it was used or called ....
 
-// Examples : 
+// Examples :
 
-// 1. A property ".length" is used on a string , it will not perform any type of task on the String instead 
+// 1. A property ".length" is used on a string , it will not perform any type of task on the String instead
 // it calculates and gives the result/answer (Length) of that String .....
 
-// 2. A method ".toString()" or "new Date()" is used , So the method ".toString()" will convert the Number (or 
-// the thing on which that method was used) to String Type , same as the method "new Date()" will generates the 
+// 2. A method ".toString()" or "new Date()" is used , So the method ".toString()" will convert the Number (or
+// the thing on which that method was used) to String Type , same as the method "new Date()" will generates the
 // Date and the method "Math.random()" generates a random number ....
 
-// So! The Method is Processing / Doing some type of Work / Performing a Task etc but A Property is only giving 
+// So! The Method is Processing / Doing some type of Work / Performing a Task etc but A Property is only giving
 // some type of Answer / Data etc from the existing thing ....
 
 // -------------------- Property : ---------------------
 
 // ".length" is a Property which helps us in identifying the Length of a String :
-// So! for property , we do not use Parenthesis in the last .... 
+// So! for property , we do not use Parenthesis in the last ....
 
 // let countryName = "Pakistan"
 // Length = countryName.length
-// console.log(Length) 
+// console.log(Length)
 
 // let number = 123
 // Length = number.length
-// console.log(Length) 
+// console.log(Length)
 // This shows "Undefined" because Length is a property which should only be used for Strings , not for Numbers ...
-
 
 // --------------------- Methods : ----------------------
 
 // ".toString()" is a method , which is pre-defined , it is used for converting a Number to a String :
 // So! for methods , we have to use Parenthesis in the last of the Method --> ".toString()"...
- 
-// let number = 50 
+
+// let number = 50
 // let string = number.toString();
 // console.log(string + " is a " + typeof string + ".");
 
@@ -245,6 +327,4 @@
 // let number = Math.random()
 // console.log(number)
 
-
 // -----------------------------------------------------------------------------------------------------
-
