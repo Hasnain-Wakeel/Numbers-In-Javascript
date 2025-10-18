@@ -195,4 +195,56 @@
 // let string2  = String(number3);
 // console.log(string2 + " is a " + typeof string2 + ".");
 
+// -------------------------------------------------------------------------------------------------------
+
+// Difference Between Methods(Functions) and Properties :
+
+// The fundamental difference between a method and a property is that : A method do some work or task on that place 
+// where that method was used but A Property did not perform any type of task on that place where it was used or 
+// called but it gives some type of result / answer from the place where it was used or called ....
+
+// Examples : 
+
+// 1. A property ".length" is used on a string , it will not perform any type of task on the String instead 
+// it calculates and gives the result/answer (Length) of that String .....
+
+// 2. A method ".toString()" or "new Date()" is used , So the method ".toString()" will convert the Number (or 
+// the thing on which that method was used) to String Type , same as the method "new Date()" will generates the 
+// Date and the method "Math.random()" generates a random number ....
+
+// So! The Method is Processing / Doing some type of Work / Performing a Task etc but A Property is only giving 
+// some type of Answer / Data etc from the existing thing ....
+
+// -------------------- Property : ---------------------
+
+// ".length" is a Property which helps us in identifying the Length of a String :
+// So! for property , we do not use Parenthesis in the last .... 
+
+// let countryName = "Pakistan"
+// Length = countryName.length
+// console.log(Length) 
+
+// let number = 123
+// Length = number.length
+// console.log(Length) 
+// This shows "Undefined" because Length is a property which should only be used for Strings , not for Numbers ...
+
+
+// --------------------- Methods : ----------------------
+
+// ".toString()" is a method , which is pre-defined , it is used for converting a Number to a String :
+// So! for methods , we have to use Parenthesis in the last of the Method --> ".toString()"...
+ 
+// let number = 50 
+// let string = number.toString();
+// console.log(string + " is a " + typeof string + ".");
+
+// "Math.random()" is also a pre-defined method which is use for generating random numbers (between 0 and 1) :
+// So! because of a Method , we are also using Parenthesis in the last of the Method --> "Math.random()"
+
+// let number = Math.random()
+// console.log(number)
+
+
+// -----------------------------------------------------------------------------------------------------
 
