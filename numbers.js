@@ -147,9 +147,9 @@
 // // "OR"
 // // age = parseFloat(age)
 // console.log(age + 1);
-// console.log(typeof age);        // Number 
+// console.log(typeof age);        // Number
 
-// ----- If the Decimal Value is too Long , and we have to show the Decimal Value by only a specific place , 
+// ----- If the Decimal Value is too Long , and we have to show the Decimal Value by only a specific place ,
 // then we use "toFixed()" Method to show the Decimal Value to a specific place : -------------------------
 
 // let floatNumber = prompt("Enter a Float Number :");
@@ -166,14 +166,33 @@
 
 // ---------------------------------------------
 
-// Same Code : 
+// Same Code :
 
 // let float1 = prompt("Enter a Float Number :");
-// let stringToNumber = parseFloat(float1); 
-// stringToNumber += 1; 
+// let stringToNumber = parseFloat(float1);
+// stringToNumber += 1;
 // console.log(stringToNumber);
 // let floatFixToTwoDecimalPlaces = parseFloat(stringToNumber.toFixed(2));         // fix to 2 decimals
 // console.log(floatFixToTwoDecimalPlaces);
 
 // ---------------------------------------------
+
+// ---------------------- Converting "Number" to "String" : --------------------------
+
+// let number1 = 100;
+// console.log(number1 + " is a " + typeof number1 + ".");
+
+// 1. Using "toString()" Method :
+
+// let number2 = 50 
+// let string1 = number2.toString();
+// console.log(string1 + " is a " + typeof string1 + ".");
+
+
+// 2. Using "String()" Keyword :
+
+// let number3 = 25
+// let string2  = String(number3);
+// console.log(string2 + " is a " + typeof string2 + ".");
+
 
