@@ -16,12 +16,16 @@
 
 // Math.abs(): Returns the absolute value of a number.
 // let num = -5;
+// // let num = 21;
+// // let num = 0;
 // let absoluteValue = Math.abs(num);
 // console.log(absoluteValue);     // Output: 5
 
 // -----------------------
 
+
 // Math.round(): Returns the nearest integer to a given number.
+
 // let num = 3.5;           // if the number after decimal is '5' or greater than '5' , it round it up ...
 // let roundedNum = Math.round(num);
 // console.log(roundedNum);     // Output: 4
@@ -33,6 +37,11 @@
 // let num = 3.2;           //  if the number after decimal is less than '5' , it round it down ...
 // let roundedNum = Math.round(num);
 // console.log(roundedNum);     // Output: 3
+
+// let num = 3.49;
+// let roundedNum = Math.round(num);
+// console.log(roundedNum);
+
 
 // -----------------------
 
@@ -163,9 +172,7 @@
 
 // console.log(Math.log(7.389))            // ≈ 2
 
-// -------------------
-
-// it means they undo each other’s effect — just like addition and subtraction are opposites.
+// it means they undo each other’s effect --> just like addition and subtraction are opposites.
 
 // Math.log(Math.exp(2)) === 2;
 // Math.exp(Math.log(7.389)) === 7.389;
@@ -203,5 +210,4 @@
 // console.log(tangentValue);           // Output: 1.6197751905438535
 
 // -------------------------------------
-
 
